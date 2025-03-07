@@ -19,11 +19,15 @@ public class Main {
 		System.out.println("Informe o valor de depósito de abertura:");
 		var saldo = scan.nextDouble();
 		
-		
-		
-		conta.setNumero(numero);
-		conta.setNomeCliente(nome);
-		conta.setSaldo(saldo);
+		if(conta.isValid(numero, nome, saldo)) {
+			System.out.println("Dados validados!");
+			//Definindo os dados no objeto
+			conta.setNumero(numero);
+			conta.setNomeCliente(nome);
+			conta.setSaldo(saldo);
+		} else {
+			System.out.println("Verifique novamente os dados preenchidos!");
+		}
 		
 		System.out.println("#### Conta criada com sucesso ####");
 		System.out.printf("Número: %s - Agência: %s\n", conta.getNumero(), conta.getAgencia());

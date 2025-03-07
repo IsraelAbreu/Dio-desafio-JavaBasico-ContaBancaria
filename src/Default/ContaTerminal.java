@@ -35,4 +35,8 @@ public class ContaTerminal {
 		return saldo;
 	}
 	
+    public static boolean isValid(Integer numero, String nome, Double saldo) {
+        return numero != null && nome != null && !nome.trim().isEmpty() && saldo != null;
+    }
+	
 }
